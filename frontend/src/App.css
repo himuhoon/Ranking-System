@@ -1,0 +1,161 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles for the Task Ranking System */
+
+.container {
+  max-width: 1200px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for history section */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Hover effects for leaderboard items */
+.leaderboard-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Button loading state */
+.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Gradient text for rank numbers */
+.rank-gradient {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animation for claim result */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.claim-result {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Focus styles for better accessibility */
+button:focus,
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Disabled state styles */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success notification styles */
+.success-notification {
+  border-left: 4px solid #10b981;
+  background-color: #ecfdf5;
+  border-color: #10b981;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Card hover effects */
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide "Made with Emergent" branding */
+[aria-label*="emergent" i],
+[title*="emergent" i],
+div[style*="position: fixed"][style*="right"][style*="bottom"],
+div[style*="position: absolute"][style*="right"][style*="bottom"],
+.emergent-branding,
+.made-with-emergent {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Hide any bottom-right fixed positioning that might be branding */
+div[style*="position: fixed"][style*="z-index"][style*="bottom"][style*="right"] {
+  display: none !important;
+}
+
+/* More specific targeting for emergent branding */
+*[class*="emergent" i],
+*[id*="emergent" i] {
+  display: none !important;
+}
+
+/* Target common branding patterns */
+div[style*="position: fixed"]:last-child,
+div[style*="position: absolute"]:last-child {
+  display: none !important;
+}
+
+/* Hide any element at bottom right corner */
+div[style*="bottom: 0"][style*="right: 0"],
+div[style*="bottom:0"][style*="right:0"],
+div[style*="bottom: 20px"][style*="right: 20px"],
+div[style*="bottom:20px"][style*="right:20px"] {
+  display: none !important;
+}
+
+/* Hide common image/logo patterns in bottom corner */
+img[style*="position: fixed"],
+img[style*="position: absolute"] {
+  display: none !important;
+}
