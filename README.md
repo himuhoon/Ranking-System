@@ -149,7 +149,3 @@ python manage.py migrate
   ```
 
 ---
-
-## Next Steps
-This README is a **general template** since I couldn’t read your repo files directly.  
-👉 If you share the **repo file tree or ZIP**, I will rewrite this into a **file-by-file detailed README** explaining each part of your project.  
